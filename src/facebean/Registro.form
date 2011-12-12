@@ -33,18 +33,8 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Component id="jLabel1" alignment="1" max="32767" attributes="0"/>
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="309" max="-2" attributes="0"/>
-              <Component id="jButton2" min="-2" pref="112" max="-2" attributes="0"/>
-              <EmptySpace pref="272" max="32767" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="88" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="label10" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-                      <Component id="jTextField8" pref="259" max="32767" attributes="0"/>
-                  </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="149" max="-2" attributes="0"/>
                       <Component id="label1" min="-2" max="-2" attributes="0"/>
@@ -58,13 +48,11 @@
                           <Component id="label5" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="label11" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="label7" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="label8" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="status_tx" alignment="0" pref="251" max="32767" attributes="0"/>
-                          <Component id="tel_tx" alignment="0" pref="251" max="32767" attributes="0"/>
-                          <Component id="pass_pass" alignment="0" pref="251" max="32767" attributes="0"/>
+                          <Component id="tel_tx" pref="251" max="32767" attributes="0"/>
+                          <Component id="pass_tx" pref="251" max="32767" attributes="0"/>
                           <Component id="email_tx" pref="251" max="32767" attributes="0"/>
                           <Component id="name_tx" alignment="0" pref="251" max="32767" attributes="1"/>
                           <Component id="genero_tx" alignment="0" pref="251" max="32767" attributes="0"/>
@@ -73,6 +61,11 @@
                   </Group>
               </Group>
               <EmptySpace min="-2" pref="193" max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace pref="305" max="32767" attributes="0"/>
+              <Component id="Enviar_btn" min="-2" pref="112" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="276" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -98,36 +91,29 @@
                   <Component id="nacimieto_tx" min="-2" max="-2" attributes="0"/>
                   <Component id="label4" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Group type="102" attributes="0">
                       <Component id="label5" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
                   </Group>
-                  <Component id="email_tx" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="email_tx" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="label11" min="-2" max="-2" attributes="0"/>
-                  <Component id="pass_pass" min="-2" max="-2" attributes="0"/>
+                  <Component id="label11" min="-2" max="-2" attributes="1"/>
+                  <Component id="pass_tx" min="-2" max="-2" attributes="1"/>
               </Group>
-              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
                   <Component id="label7" min="-2" max="-2" attributes="0"/>
                   <Component id="tel_tx" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="status_tx" min="-2" max="-2" attributes="0"/>
-                  <Component id="label8" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="label10" min="-2" max="-2" attributes="0"/>
-                  <Component id="jTextField8" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
-              <Component id="jButton2" min="-2" pref="34" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
+              <Component id="Enviar_btn" min="-2" pref="34" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -175,20 +161,6 @@
         <Property name="text" type="java.lang.String" resourceKey="label7.text"/>
       </Properties>
     </Component>
-    <Component class="java.awt.Label" name="label8">
-      <Properties>
-        <Property name="font" type="java.awt.Font" resourceKey="label3.font"/>
-        <Property name="name" type="java.lang.String" value="label8" noResource="true"/>
-        <Property name="text" type="java.lang.String" resourceKey="label8.text"/>
-      </Properties>
-    </Component>
-    <Component class="java.awt.Label" name="label10">
-      <Properties>
-        <Property name="font" type="java.awt.Font" resourceKey="label3.font"/>
-        <Property name="name" type="java.lang.String" value="label10" noResource="true"/>
-        <Property name="text" type="java.lang.String" resourceKey="label10.text"/>
-      </Properties>
-    </Component>
     <Component class="java.awt.Label" name="label11">
       <Properties>
         <Property name="font" type="java.awt.Font" resourceKey="label3.font"/>
@@ -199,57 +171,31 @@
     <Component class="javax.swing.JTextField" name="name_tx">
       <Properties>
         <Property name="font" type="java.awt.Font" resourceKey="label3.font"/>
-        <Property name="text" type="java.lang.String" resourceKey="name_tx.text"/>
         <Property name="name" type="java.lang.String" value="name_tx" noResource="true"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="genero_tx">
       <Properties>
         <Property name="font" type="java.awt.Font" resourceKey="label3.font"/>
-        <Property name="text" type="java.lang.String" resourceKey="genero_tx.text"/>
         <Property name="name" type="java.lang.String" value="genero_tx" noResource="true"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="nacimieto_tx">
       <Properties>
         <Property name="font" type="java.awt.Font" resourceKey="label3.font"/>
-        <Property name="text" type="java.lang.String" resourceKey="nacimieto_tx.text"/>
         <Property name="name" type="java.lang.String" value="nacimieto_tx" noResource="true"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="email_tx">
       <Properties>
         <Property name="font" type="java.awt.Font" resourceKey="label3.font"/>
-        <Property name="text" type="java.lang.String" resourceKey="email_tx.text"/>
         <Property name="name" type="java.lang.String" value="email_tx" noResource="true"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="tel_tx">
       <Properties>
         <Property name="font" type="java.awt.Font" resourceKey="label3.font"/>
-        <Property name="text" type="java.lang.String" resourceKey="tel_tx.text"/>
         <Property name="name" type="java.lang.String" value="tel_tx" noResource="true"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="status_tx">
-      <Properties>
-        <Property name="font" type="java.awt.Font" resourceKey="label3.font"/>
-        <Property name="text" type="java.lang.String" resourceKey="status_tx.text"/>
-        <Property name="name" type="java.lang.String" value="status_tx" noResource="true"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="jTextField8">
-      <Properties>
-        <Property name="font" type="java.awt.Font" resourceKey="label3.font"/>
-        <Property name="text" type="java.lang.String" resourceKey="jTextField8.text"/>
-        <Property name="name" type="java.lang.String" value="jTextField8" noResource="true"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JPasswordField" name="pass_pass">
-      <Properties>
-        <Property name="font" type="java.awt.Font" resourceKey="label3.font"/>
-        <Property name="text" type="java.lang.String" resourceKey="pass_pass.text"/>
-        <Property name="name" type="java.lang.String" value="pass_pass" noResource="true"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
@@ -259,15 +205,19 @@
         <Property name="name" type="java.lang.String" value="jLabel1" noResource="true"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton2">
+    <Component class="javax.swing.JButton" name="Enviar_btn">
       <Properties>
-        <Property name="font" type="java.awt.Font" resourceKey="jButton2.font"/>
-        <Property name="text" type="java.lang.String" resourceKey="jButton2.text"/>
-        <Property name="name" type="java.lang.String" value="jButton2" noResource="true"/>
+        <Property name="name" type="java.lang.String" value="Enviar_btn" noResource="true"/>
       </Properties>
       <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton2MouseClicked"/>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Enviar_btnMouseClicked"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Enviar_btnActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="pass_tx">
+      <Properties>
+        <Property name="name" type="java.lang.String" value="pass_tx" noResource="true"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>

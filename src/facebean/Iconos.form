@@ -23,22 +23,23 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Component id="jButton4" alignment="0" max="32767" attributes="1"/>
                   <Component id="jButton3" alignment="0" max="32767" attributes="1"/>
                   <Component id="jButton1" alignment="0" max="32767" attributes="1"/>
                   <Component id="jButton2" alignment="0" max="32767" attributes="1"/>
                   <Component id="jButton5" alignment="0" min="-2" pref="182" max="-2" attributes="1"/>
-                  <Component id="jButton6" alignment="0" max="32767" attributes="1"/>
+                  <Component id="jButton6" alignment="0" min="-2" max="-2" attributes="1"/>
               </Group>
-              <EmptySpace min="-2" pref="104" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="jButton10" max="32767" attributes="1"/>
                   <Component id="jButton9" max="32767" attributes="1"/>
                   <Component id="jButton8" alignment="0" max="32767" attributes="1"/>
-                  <Component id="jButton7" alignment="0" max="32767" attributes="1"/>
+                  <Component id="jButton7" alignment="0" pref="241" max="32767" attributes="1"/>
               </Group>
-              <EmptySpace pref="79" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -61,11 +62,13 @@
                       <Component id="jButton6" min="-2" pref="47" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="jButton7" min="-2" pref="66" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+                      <Component id="jButton7" min="-2" pref="51" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
                       <Component id="jButton8" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
                       <Component id="jButton9" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                      <Component id="jButton10" min="-2" pref="44" max="-2" attributes="1"/>
                   </Group>
               </Group>
               <EmptySpace pref="60" max="32767" attributes="0"/>
@@ -76,7 +79,7 @@
   <SubComponents>
     <Component class="javax.swing.JButton" name="jButton3">
       <Properties>
-        <Property name="font" type="java.awt.Font" noResource="true" editor="org.netbeans.beaninfo.editors.FontEditor">
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="11" style="1"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
@@ -88,6 +91,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="jButton4">
       <Properties>
+        <Property name="font" type="java.awt.Font" noResource="true" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="11" style="1"/>
+        </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/facebean/resources/inicio.png"/>
         </Property>
@@ -97,7 +103,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="jButton1">
       <Properties>
-        <Property name="font" type="java.awt.Font" noResource="true" editor="org.netbeans.beaninfo.editors.FontEditor">
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="12" style="1"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
@@ -133,7 +139,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="jButton6">
       <Properties>
-        <Property name="font" type="java.awt.Font" noResource="true" editor="org.netbeans.beaninfo.editors.FontEditor">
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="11" style="1"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
@@ -149,7 +155,7 @@
           <Font name="Tahoma" size="14" style="1"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="0" name="null"/>
+          <Image iconType="3" name="/facebean/resources/send.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="enviar / sumbit"/>
         <Property name="name" type="java.lang.String" value="jButton7" noResource="true"/>
@@ -161,7 +167,7 @@
           <Font name="Tahoma" size="12" style="1"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="0" name="null"/>
+          <Image iconType="3" name="/facebean/resources/friend.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="ver amigos"/>
         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -176,10 +182,22 @@
           <Font name="Tahoma" size="12" style="1"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="0" name="null"/>
+          <Image iconType="3" name="/facebean/resources/refresh.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="actualizar"/>
         <Property name="name" type="java.lang.String" value="jButton9" noResource="true"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="jButton10">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="11" style="1"/>
+        </Property>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/facebean/resources/request.png"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="ver solicitudes"/>
+        <Property name="name" type="java.lang.String" value="jButton10" noResource="true"/>
       </Properties>
     </Component>
   </SubComponents>

@@ -14,7 +14,10 @@ package facebean;
 import java.io.File;
 import java.text.DateFormat;
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -23,7 +26,8 @@ import java.util.logging.Logger;
  * @author stefany
  */
 public class Registro extends javax.swing.JFrame {
-
+    protected String dir;
+    protected String dirF;
     /** Creates new form Registro */
     public Registro() {
         initComponents();
@@ -45,19 +49,15 @@ public class Registro extends javax.swing.JFrame {
         label4 = new java.awt.Label();
         label5 = new java.awt.Label();
         label7 = new java.awt.Label();
-        label8 = new java.awt.Label();
-        label10 = new java.awt.Label();
         label11 = new java.awt.Label();
         name_tx = new javax.swing.JTextField();
         genero_tx = new javax.swing.JTextField();
         nacimieto_tx = new javax.swing.JTextField();
         email_tx = new javax.swing.JTextField();
         tel_tx = new javax.swing.JTextField();
-        status_tx = new javax.swing.JTextField();
-        jTextField8 = new javax.swing.JTextField();
-        pass_pass = new javax.swing.JPasswordField();
         jLabel1 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        Enviar_btn = new javax.swing.JButton();
+        pass_tx = new javax.swing.JTextField();
 
         label9.setName("label9"); // NOI18N
         org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance().getContext().getResourceMap(Registro.class);
@@ -90,62 +90,45 @@ public class Registro extends javax.swing.JFrame {
         label7.setName("label7"); // NOI18N
         label7.setText(resourceMap.getString("label7.text")); // NOI18N
 
-        label8.setFont(resourceMap.getFont("label3.font")); // NOI18N
-        label8.setName("label8"); // NOI18N
-        label8.setText(resourceMap.getString("label8.text")); // NOI18N
-
-        label10.setFont(resourceMap.getFont("label3.font")); // NOI18N
-        label10.setName("label10"); // NOI18N
-        label10.setText(resourceMap.getString("label10.text")); // NOI18N
-
         label11.setFont(resourceMap.getFont("label3.font")); // NOI18N
         label11.setName("label11"); // NOI18N
         label11.setText(resourceMap.getString("label11.text")); // NOI18N
 
         name_tx.setFont(resourceMap.getFont("label3.font")); // NOI18N
-        name_tx.setText(resourceMap.getString("name_tx.text")); // NOI18N
         name_tx.setName("name_tx"); // NOI18N
 
         genero_tx.setFont(resourceMap.getFont("label3.font")); // NOI18N
-        genero_tx.setText(resourceMap.getString("genero_tx.text")); // NOI18N
         genero_tx.setName("genero_tx"); // NOI18N
 
         nacimieto_tx.setFont(resourceMap.getFont("label3.font")); // NOI18N
-        nacimieto_tx.setText(resourceMap.getString("nacimieto_tx.text")); // NOI18N
         nacimieto_tx.setName("nacimieto_tx"); // NOI18N
 
         email_tx.setFont(resourceMap.getFont("label3.font")); // NOI18N
-        email_tx.setText(resourceMap.getString("email_tx.text")); // NOI18N
         email_tx.setName("email_tx"); // NOI18N
 
         tel_tx.setFont(resourceMap.getFont("label3.font")); // NOI18N
-        tel_tx.setText(resourceMap.getString("tel_tx.text")); // NOI18N
         tel_tx.setName("tel_tx"); // NOI18N
-
-        status_tx.setFont(resourceMap.getFont("label3.font")); // NOI18N
-        status_tx.setText(resourceMap.getString("status_tx.text")); // NOI18N
-        status_tx.setName("status_tx"); // NOI18N
-
-        jTextField8.setFont(resourceMap.getFont("label3.font")); // NOI18N
-        jTextField8.setText(resourceMap.getString("jTextField8.text")); // NOI18N
-        jTextField8.setName("jTextField8"); // NOI18N
-
-        pass_pass.setFont(resourceMap.getFont("label3.font")); // NOI18N
-        pass_pass.setText(resourceMap.getString("pass_pass.text")); // NOI18N
-        pass_pass.setName("pass_pass"); // NOI18N
 
         jLabel1.setIcon(resourceMap.getIcon("jLabel1.icon")); // NOI18N
         jLabel1.setText(resourceMap.getString("jLabel1.text")); // NOI18N
         jLabel1.setName("jLabel1"); // NOI18N
 
-        jButton2.setFont(resourceMap.getFont("jButton2.font")); // NOI18N
-        jButton2.setText(resourceMap.getString("jButton2.text")); // NOI18N
-        jButton2.setName("jButton2"); // NOI18N
-        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+        Enviar_btn.setFont(resourceMap.getFont("Enviar_btn.font")); // NOI18N
+        Enviar_btn.setText(resourceMap.getString("Enviar_btn.text")); // NOI18N
+        Enviar_btn.setName("Enviar_btn"); // NOI18N
+        Enviar_btn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton2MouseClicked(evt);
+                Enviar_btnMouseClicked(evt);
             }
         });
+        Enviar_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Enviar_btnActionPerformed(evt);
+            }
+        });
+
+        pass_tx.setText(resourceMap.getString("pass_tx.text")); // NOI18N
+        pass_tx.setName("pass_tx"); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -153,16 +136,8 @@ public class Registro extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addGap(309, 309, 309)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(272, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
                 .addGap(88, 88, 88)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(label10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(31, 31, 31)
-                        .addComponent(jTextField8, javax.swing.GroupLayout.DEFAULT_SIZE, 259, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(149, 149, 149)
                         .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -174,18 +149,20 @@ public class Registro extends javax.swing.JFrame {
                             .addComponent(label4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(label5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(label11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(label7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(label8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(label7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(status_tx, javax.swing.GroupLayout.DEFAULT_SIZE, 251, Short.MAX_VALUE)
                             .addComponent(tel_tx, javax.swing.GroupLayout.DEFAULT_SIZE, 251, Short.MAX_VALUE)
-                            .addComponent(pass_pass, javax.swing.GroupLayout.DEFAULT_SIZE, 251, Short.MAX_VALUE)
+                            .addComponent(pass_tx, javax.swing.GroupLayout.DEFAULT_SIZE, 251, Short.MAX_VALUE)
                             .addComponent(email_tx, javax.swing.GroupLayout.DEFAULT_SIZE, 251, Short.MAX_VALUE)
                             .addComponent(name_tx, javax.swing.GroupLayout.DEFAULT_SIZE, 251, Short.MAX_VALUE)
                             .addComponent(genero_tx, javax.swing.GroupLayout.DEFAULT_SIZE, 251, Short.MAX_VALUE)
                             .addComponent(nacimieto_tx, javax.swing.GroupLayout.DEFAULT_SIZE, 251, Short.MAX_VALUE))))
                 .addGap(193, 193, 193))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(305, Short.MAX_VALUE)
+                .addComponent(Enviar_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(276, 276, 276))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -206,37 +183,33 @@ public class Registro extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(nacimieto_tx, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(label4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(27, 27, 27)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(19, 19, 19)
-                        .addComponent(label5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(email_tx, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(19, 19, 19)
+                        .addComponent(label5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(19, 19, 19))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(email_tx, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(label11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(pass_pass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(28, 28, 28)
+                    .addComponent(pass_tx, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(label7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tel_tx, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(status_tx, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(label8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(32, 32, 32)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(label10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(55, 55, 55)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(51, 51, 51)
+                .addComponent(Enviar_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(100, 100, 100))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
-try{
+    private void Enviar_btnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Enviar_btnMouseClicked
+          File user = null;
+
+
             String nombre= this.name_tx.getText();
             String sex=this.genero_tx.getText();
             String fecha= this.nacimieto_tx.getText();
@@ -247,27 +220,35 @@ try{
             int tele= Integer.parseInt(telef);
             //
 
-            String pass= this.pass_pass.getText();
+            String pass= this.pass_tx.getText();
 
-
-            DateFormat fechaN=null;
-            fechaN.parse(fecha);
-            long f= fechaN.LONG;
-            Date Fecha= new Date(f);
+try{
+            SimpleDateFormat formatoDelTexto = new SimpleDateFormat("dd-MM-yyyy");
+            Date fechas = null;
+            fechas = formatoDelTexto.parse(fecha);
+            long f= fechas.getTime();
 
             Archivos ar= new Archivos ();
 
-            // Archivo gerencial
-            ar.g.seek(ar.g.length());
+            //Archivo gerencial
+            long pos= ar.g.length();
+            ar.g.seek(pos);
             ar.g.writeUTF(correo);//correo
             ar.g.writeUTF(pass);// password
             ar.g.writeBoolean(true);//cuenta desactivada o ni
 
-            File user= new File(correo);
+            user= new File(correo);
+
             user.mkdir();
             String path= user.getAbsolutePath();
 
             Profile perfil= new Profile(path + "/profile.fbn");
+            Friends amigis= new Friends(path + "/manageFriends.fbn");
+
+            String pathy= path + "/profile.fbn";
+            dir= pathy;
+            
+            perfil.pro.seek(0);
             perfil.pro.writeUTF(nombre);
             perfil.pro.writeUTF(sex);
             perfil.pro.writeLong(f);
@@ -276,11 +257,21 @@ try{
             perfil.pro.writeLong(Fecha2.getTime());
             perfil.pro.writeInt(tele);
 
+        HomeFeed home= new HomeFeed ();
+            home.setVisible(true);
+            dispose();
 
         } catch (Exception ex) {
             System.out.println("Error: " + ex.getMessage());
         }
-    }//GEN-LAST:event_jButton2MouseClicked
+
+
+
+    }//GEN-LAST:event_Enviar_btnMouseClicked
+
+    private void Enviar_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Enviar_btnActionPerformed
+
+    }//GEN-LAST:event_Enviar_btnActionPerformed
 
     /**
     * @param args the command line arguments
@@ -294,25 +285,21 @@ try{
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Enviar_btn;
     private javax.swing.JTextField email_tx;
     private javax.swing.JTextField genero_tx;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JTextField jTextField8;
     private java.awt.Label label1;
-    private java.awt.Label label10;
     private java.awt.Label label11;
     private java.awt.Label label2;
     private java.awt.Label label3;
     private java.awt.Label label4;
     private java.awt.Label label5;
     private java.awt.Label label7;
-    private java.awt.Label label8;
     private java.awt.Label label9;
     private javax.swing.JTextField nacimieto_tx;
     private javax.swing.JTextField name_tx;
-    private javax.swing.JPasswordField pass_pass;
-    private javax.swing.JTextField status_tx;
+    private javax.swing.JTextField pass_tx;
     private javax.swing.JTextField tel_tx;
     // End of variables declaration//GEN-END:variables
 

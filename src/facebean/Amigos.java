@@ -50,35 +50,35 @@ public class Amigos extends javax.swing.JFrame {
             }
         });
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/facebean/wallpaper.jpg"))); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/facebean/resources/wallpaper.jpg"))); // NOI18N
         jLabel7.setName("jLabel7"); // NOI18N
 
-        label1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        label1.setFont(new java.awt.Font("Tahoma", 1, 12));
         label1.setName("label1"); // NOI18N
         label1.setText("Nombre");
 
-        label2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        label2.setFont(new java.awt.Font("Tahoma", 1, 12));
         label2.setName("label2"); // NOI18N
         label2.setText("Nombre");
 
-        label3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        label3.setFont(new java.awt.Font("Tahoma", 1, 12));
         label3.setName("label3"); // NOI18N
         label3.setText("Nombre");
 
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Tahoma", 1, 12));
         jButton1.setText("Ver Perfil");
         jButton1.setName("jButton1"); // NOI18N
 
-        jButton2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton2.setFont(new java.awt.Font("Tahoma", 1, 12));
         jButton2.setText("Ver Perfil");
         jButton2.setName("jButton2"); // NOI18N
 
-        jButton3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton3.setFont(new java.awt.Font("Tahoma", 1, 12));
         jButton3.setText("Ver Perfil");
         jButton3.setBorder(null);
         jButton3.setName("jButton3"); // NOI18N
 
-        jButton4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton4.setFont(new java.awt.Font("Tahoma", 1, 12));
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/facebean/resources/profile.png"))); // NOI18N
         jButton4.setName("jButton4"); // NOI18N
 

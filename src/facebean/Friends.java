@@ -13,6 +13,13 @@ import java.io.RandomAccessFile;
  */
 public class Friends {
 
-    RandomAccessFile f= null;
+    RandomAccessFile fri= null;
 
+    public Friends(String path){
+         try{
+        fri=new RandomAccessFile(path, "rw");
+        } catch( Exception err){
+            System.out.println("Error : " + err.getMessage());
+        }
+    }
 }
